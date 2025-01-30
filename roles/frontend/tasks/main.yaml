@@ -9,20 +9,25 @@
     state: started
     enabled: yes
 
-- name: dlt html dir
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
+- name: include role from common roles
+  include_role:
+    name: common
+    tasks_from: main
 
-- name: create html dir
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
+# - name: dlt html dir
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: absent
 
-- name: create url
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-    dest: /tmp/frontend.zip
+# - name: create html dir
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: directory
+
+# - name: create url
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+#     dest: /tmp/frontend.zip
 
 - name: unzip file
   ansible.builtin.unarchive:
