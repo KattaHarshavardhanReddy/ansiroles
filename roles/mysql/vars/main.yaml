@@ -1,2 +1,3 @@
-u_pwd: "ExpenseApp@1"
-#app_location: /usr/share/nginx/html
+#u_pwd: "ExpenseApp@1"
+mysql_user: root
+mysql_host: mysql.katta.blog
