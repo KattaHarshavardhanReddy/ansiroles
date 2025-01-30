@@ -19,7 +19,7 @@
 
 - name: connect to mysql server
   community.mysql.mysql_info:
-    login_user: "{{ mysql_user }}"
+    login_user: root
     login_password: "{{ u_pwd }}"
     login_host: "{{ mysql_host }}"
   register: mysql_info
